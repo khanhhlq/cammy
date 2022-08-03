@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 import './PageHome.css'
 
 const PageHome = () => {
@@ -10,7 +11,7 @@ const PageHome = () => {
 
   return (
     <div className='home'>
-        <video autoPlay={true} muted={muted} loop={true}>
+        <video autoPlay={true} muted={muted} loop={true} controls={false}>
             <source src={require('./video/tokyo.mp4')} type='video/mp4' />
         </video>
         <div className='home-content'>
@@ -18,8 +19,12 @@ const PageHome = () => {
             <h1 className='title'>study room</h1>
             <p className='sub-title'>enjoy with us</p>
             <div className="home-content-button">
-                <button className='btn-1'>join study room</button>
-                <button className='btn-2'>Explore study space</button>
+                <div>
+                <Link to='/login'>
+                  <button className='btn-1'>join study room</button>
+                </Link>
+                </div>
+                <button className='btn-2'>explore study space</button>
             </div>
             <FontAwesomeIcon 
               icon={faVolumeUp} 
