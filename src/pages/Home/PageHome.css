@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.home-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+    z-index: 2;
+}
+
+.title{
+    font-size: 104px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.8em;
+    padding: 16px 0;
+    font-family: "Titillium Web", Sans-serif;
+}
+
+.sub-title{
+    color: #FFFFFF;
+    font-family:'Courier New', Courier, monospace ;
+    font-size: 34px;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.home-content-button{
+    padding: 16px 0;
+}
+
+.home-content-button button{
+    margin: 0 16px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.home-content-button .btn-1{
+    background-color: #615DFA;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 19px 40px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.home-content-button .btn-1:hover{
+    background-color: #164C69;
+}
+
+.home-content-button .btn-2{
+    background-color: #FFFFFF00;
+    color: black;
+    border-style: solid;
+    border-width: 1px;
+    outline: none;
+    padding: 18px 60px;
+    border-radius: 10px;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.home-content-button .btn-2:hover{
+    background-color: #3e3f5e;
+    color: white;
+}
+
+.volume{
+    font-size: 32px;
+    cursor: pointer;
+}
