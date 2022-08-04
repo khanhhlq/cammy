@@ -1,13 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-
-import PageHome from './pages/Home/PageHome';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/Home/HomePage';
+import LoginPage from './pages/Login/LoginPage';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <PageHome />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

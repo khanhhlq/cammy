@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https:///fonts.googleapis.com/css?family=Montserrat');
+
+.login{
+    display: flex;
+}   
+
+.login-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../assets/images/backgroundLogin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: 100vh;
+    width: 55%;
+    color: white;
+}
+
+.login-header h4{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1em;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+}
+
+.login-header h1{
+    font-size: 6.5rem;
+    font-weight: 900;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: Quicksand, sans-serif;
+}
+
+.login-header p{
+    width: 400px;
+    margin: 32px auto 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    line-height: 1.3333333333em;
+}
+
+.login-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 45%;
+}
+
+.login-main .logo{
+    height: 195px;
+    width: 195px;
+    margin-bottom: 24px;
+}
+
+.login-main h4{
+    font-size: 1.725rem;
+    font-weight: bold;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+}
+
+.login-main form{
+    display: flex;
+    flex-direction: column;
+    margin: 80px 148.250px 0 148.250px;
+    padding: 0;
+    width: 356px;
+}
+
+.login-main .btn{
+    box-shadow: 4px 7px 12px 0 rgba(97,93,250, .2);
+    background-color: #615dfa;
+    border-color: #00000000;
+    color: white;
+    padding: 18px 0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+}
+
+.login-main .btn:hover{
+    background-color: #5753e4;
+}
+
+.login-main form input{
+    height: 54px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 28px 0;
+    border: 1px solid #dedeea;
+    color: #3e3f5e;
+}
+
+.login-main form input:focus{
+    border: 1px solid #615dfa;
+    outline: none;
+}
+
+.login-main form input::placeholder {
+    color: #adafca;
+}
+  
+.login-main form input::-ms-input-placeholder {
+    color: #adafca;
+}
+  
+.login-main form input::-ms-input-placeholder {
+    color: #adafca;
+}
+
+.login-main .nav{
+    display: flex;
+    color: #3e3f5e;
+    margin: 32px auto 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.login-main .nav p{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+}
+
+.login-main .nav p:hover{
+    color: #23d2e2;
+}
+
+.login-main .nav span{
+    padding: 0 6px;
+}

@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body::after {
+.home::after {
     content: '\A';
     position: absolute;
     width: 100%; 
@@ -19,7 +13,7 @@ body::after {
     z-index: 2;
 }
 
-video{
+.videoBackground{
     position: absolute;
     top: 0;
     left: 0;
