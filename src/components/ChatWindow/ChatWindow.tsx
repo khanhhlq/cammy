@@ -97,7 +97,7 @@ const ChatWindow = () => {
 
         <ContentStyled>
             <MessageListStyled>
-                <Message text="text" displayName="Khanh" createdAt="123123123" photoURL={null}/>
+                <Message text="text" displayName="Khanh" createdAt="123123123" photoURL="" />
             </MessageListStyled>
             <FormStyled>
                 <Form.Item>

@@ -21,7 +21,7 @@ const WrapperStyled = styled.div`
     }
 `
 
-export default function Message({ text, displayName, createdAt, photoURL }) {
+export default function Message({ text, displayName, createdAt, photoURL }: { text: string; displayName:string; createdAt: string, photoURL: string }) {
   return (
     <WrapperStyled>
         <div>
