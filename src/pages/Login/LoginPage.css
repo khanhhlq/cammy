@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     background-image: url(../../assets/images/backgroundLogin.jpg);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -21,7 +22,7 @@
 
 .login-header h4{
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1em;
     font-family: Montserrat, sans-serif;
     text-transform: uppercase;
@@ -39,7 +40,7 @@
     width: 400px;
     margin: 32px auto 0;
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: Montserrat, sans-serif;
     text-align: center;
     line-height: 1.3333333333em;
@@ -60,84 +61,70 @@
     margin-bottom: 24px;
 }
 
-.login-main h4{
+.login-main h5{
     font-size: 1.725rem;
-    font-weight: bold;
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: capitalize;
-}
-
-.login-main form{
-    display: flex;
-    flex-direction: column;
-    margin: 80px 148.250px 0 148.250px;
-    padding: 0;
-    width: 356px;
+    margin-bottom: 32px;
+    color: #3e3f5e;
 }
 
 .login-main .btn{
+    display: flex;
+    align-items: center;
     box-shadow: 4px 7px 12px 0 rgba(97,93,250, .2);
-    background-color: #615dfa;
     border-color: #00000000;
+    text-align: left;
     color: white;
-    padding: 18px 0;
+    padding: 18px 0 18px 16px;
+    margin: 16px 0 8px 0;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     transition: background-color .2s ease-in-out;
     cursor: pointer;
+    width: 325px;
 }
 
-.login-main .btn:hover{
-    background-color: #5753e4;
-}
-
-.login-main form input{
-    height: 54px;
-    padding: 0 18px;
-    border-radius: 12px;
+.login-main .btn span{
+    padding-left: 16px;
     font-size: 1rem;
-    font-weight: 700;
-    margin: 0 0 28px 0;
-    border: 1px solid #dedeea;
-    color: #3e3f5e;
 }
 
-.login-main form input:focus{
-    border: 1px solid #615dfa;
-    outline: none;
+.login-main .btn-google{
+    background-color: #f00;
 }
 
-.login-main form input::placeholder {
-    color: #adafca;
-}
-  
-.login-main form input::-ms-input-placeholder {
-    color: #adafca;
-}
-  
-.login-main form input::-ms-input-placeholder {
-    color: #adafca;
+.login-main .btn-google:hover{
+    background-color: #e74c3c;
 }
 
-.login-main .nav{
-    display: flex;
-    color: #3e3f5e;
-    margin: 32px auto 0;
-    font-size: 0.875rem;
-    font-weight: 700;
+.login-main .btn-facebook{
+    background-color: #0572e6;
 }
 
-.login-main .nav p{
-    font-family: Montserrat, Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    transition: color .2s ease-in-out;
+.login-main .btn-facebook:hover{
+    background-color: #2986e2;
 }
 
-.login-main .nav p:hover{
-    color: #23d2e2;
-}
+@media only screen and (max-width: 1350px){
+    .login-header{
+        display: none;
+    }
 
-.login-main .nav span{
-    padding: 0 6px;
+    .login-main{
+        background-image: url(../../assets/images/backgroundLogin.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        margin: auto auto;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .login-main h5{
+        color: white;
+    }
 }

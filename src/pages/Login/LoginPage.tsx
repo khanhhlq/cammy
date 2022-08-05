@@ -1,8 +1,10 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons' 
 import './LoginPage.css';
 
-const LoginPage = () => {
 
+const LoginPage = () => {
     return(
         <div className="login">
             <div className="login-header">
@@ -12,24 +14,15 @@ const LoginPage = () => {
             </div>
             <div className="login-main">
                 <img className="logo" src={require('../../assets/images/logo.png')} alt="cammy" />
-                <h4>welcome!</h4>
-                <form>
-                    <input 
-                        type="text" 
-                        placeholder="Email Address" 
-                    />
-                    <input 
-                        type="password" 
-                        placeholder="Password"
-                    />
-                    <button className="btn btn-login">Log in</button>
-                    {/* <button className="btn btn-google">Google</button> */}
-                </form>
-                <p className="nav">
-                    <p>Register</p>
-                    <span>|</span>
-                    <p>Lost your password?</p> 
-                </p>
+                <h5>welcome!</h5>
+                <button className="btn btn-google">
+                    <FontAwesomeIcon icon={faFacebook} />
+                    <span>Login with Google</span>
+                </button>
+                <button className="btn btn-facebook">
+                    <FontAwesomeIcon icon={faGoogle} />
+                    <span>Login with Facebook</span>
+                </button>
             </div>
         </div>
     )
