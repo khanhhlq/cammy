@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/config'
-import LoginPage from '../Login/LoginPage';
 
 const HomePage = () => {
-
-
+  const logout = async () => {
+    try{
+      await signOut(auth)
+    } catch (error) {
+      console.log('ERROR LOGGING OUT', error)
+    }
+  }
+  
   return (
     <div className='home'>
-        <h1>trang chủ</h1>
-      </div>
+      <h1>trang chủ</h1>
+      <button onClick={logout}>log out</button>
+    </div>
   )
 }
 

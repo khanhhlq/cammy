@@ -5,17 +5,17 @@ import { useSignInWithFacebook, useSignInWithGoogle } from "react-firebase-hooks
 import { auth } from "../../firebase/config";
 
 const LoginPage = () => {
-    const [signInWithGoogle, _userGg, _loadingGg, _errorGg] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, _userFb, _loadingFb, _errorFb] = useSignInWithFacebook(auth);
-
-    const handleFbLogin = () => {
-        signInWithFacebook()
-    }   
+    const [signInWithGoogle, userGg, _loadingGg, _errorGg] = useSignInWithGoogle(auth);
+    const [signInWithFacebook, userFb, _loadingFb, _errorFb] = useSignInWithFacebook(auth);
 
     const handleGgLogin = () => {
         signInWithGoogle()
     }
-  
+
+    const handleFbLogin = () => {
+        signInWithFacebook()
+    }   
+    
     return(
         <div className="login">
             <div className="login-header">
