@@ -1,21 +1,29 @@
 import './LoginPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons' 
-import { useSignInWithFacebook, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase/config";
+import firebase, { auth, db } from "../../firebase/config";
+import { addDocument } from '../../firebase/service';
+
+
+const fbProvider = new firebase.auth.FacebookAuthProvider();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 const LoginPage = () => {
-    const [signInWithGoogle, userGg, _loadingGg, _errorGg] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, userFb, _loadingFb, _errorFb] = useSignInWithFacebook(auth);
-
-    const handleGgLogin = () => {
-        signInWithGoogle()
+    const handleLogin = async (provider:any) => {
+        const { additionalUserInfo, user } = await auth.signInWithPopup(provider);
+        
+        if (additionalUserInfo?.isNewUser) {
+            addDocument('users', {
+                displayName: user?.displayName,
+                email: user?.email,
+                photoURL: user?.photoURL,
+                uid: user?.displayName,
+                providerId: additionalUserInfo.providerId
+            })
+        }
     }
 
-    const handleFbLogin = () => {
-        signInWithFacebook()
-    }   
-    
+
     return(
         <div className="login">
             <div className="login-header">
@@ -26,11 +34,11 @@ const LoginPage = () => {
             <div className="login-main">
                 <img className="logo" src={require('../../assets/images/logo.png')} alt="cammy" />
                 <h5>Yo! Welcome 👋</h5>
-                <button className="btn btn-google" onClick={handleGgLogin}>
+                <button className="btn btn-google" onClick={() => handleLogin(googleProvider)}>
                     <FontAwesomeIcon icon={faFacebook} />
                     <span>Login with Google</span>
                 </button>
-                <button className="btn btn-facebook" onClick={handleFbLogin}>
+                <button className="btn btn-facebook" onClick={() => handleLogin(fbProvider)}>
                     <FontAwesomeIcon icon={faGoogle} />
                     <span>Login with Facebook</span>
                 </button>

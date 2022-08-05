@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Avatar, Typography } from 'antd'
 import styled from '@emotion/styled';
-import { auth } from '../../firebase/config'
+import { auth, db } from '../../firebase/config'
+import { AuthContext } from '../../Context/AuthProvider';
 
 const WrapperStyled = styled.div`
   display: flex;
@@ -15,11 +16,17 @@ const WrapperStyled = styled.div`
   }
 `
 const UserInfo = () => {
+  const { 
+    user: { displayName, photoURL },
+  } = React.useContext(AuthContext)
+  
   return (
     <WrapperStyled>
         <div>
-            <Avatar>A</Avatar>
-            <Typography.Text className='username'>ADASDA</Typography.Text>
+            <Avatar src={photoURL}>
+              {photoURL ? '' : displayName?.charAt(0).toUpperCase()}
+            </Avatar>
+            <Typography.Text className='username'>{displayName}</Typography.Text>
         </div>
         <Button ghost onClick={() => auth.signOut()}>Đăng xuất</Button>
     </WrapperStyled>
