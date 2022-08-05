@@ -10,7 +10,7 @@ const WelcomeScreen = () => {
     const [displayVolumeMuted, setDisplayVolumeMuted] = useState("block")
   
     return (
-        <div className='home'>
+        <div className='welcome-screen'>
             <video autoPlay={true} muted={true} loop={true} controls={false} className="videoBackground">
                 <source src={require('../../assets/video/tokyo.mp4')} type='video/mp4' />
             </video>

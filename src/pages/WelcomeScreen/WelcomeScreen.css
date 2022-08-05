@@ -1,4 +1,4 @@
-.home::after {
+.welcome-screen::after {
     content: '\A';
     position: absolute;
     width: 100%; 
