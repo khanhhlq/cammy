@@ -20,8 +20,8 @@ const useFirestore = (collection:any, condition:any) => {
       );
     }
 
-    const unsubscribe = collectionRef.onSnapshot((snapshot) => {
-      const documents = snapshot.docs.map((doc) => ({
+    const unsubscribe = collectionRef.onSnapshot(snapshot => {
+      const documents = snapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id,
       }));
