@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React from "react";
 import { Collapse, Typography, Button} from "antd";
 import { PlusSquareOutlined } from "@ant-design/icons";
 import styled from '@emotion/styled';
@@ -30,7 +30,7 @@ const LinkStyled = styled(Typography.Link)`
 
 export default function RoomList() { 
     const { rooms, setIsAddRoomVisible } = React.useContext(AppContext);
-    
+   
     const handleAddRoom = () => {
         setIsAddRoomVisible(true);
     };
@@ -38,12 +38,17 @@ export default function RoomList() {
     return (
         <Collapse defaultActiveKey={['1']} ghost>
             <PanelStyled header="Danh sách phòng" key='1'>
-                {rooms.map((room:any) => 
-                    <LinkStyled key={room.id}>
-                        {room.name}
-                    </LinkStyled>
-                )}
-                <Button type="text" className="add-room" icon={<PlusSquareOutlined />} onClick={handleAddRoom}>
+            {rooms.map((room:any) => (
+                <LinkStyled key={room.id}>
+                    {room.name}
+                </LinkStyled>
+            ))}
+                <Button 
+                    type="text" 
+                    className="add-room" 
+                    icon={<PlusSquareOutlined />} 
+                    onClick={handleAddRoom}
+                >
                     Thêm phòng
                 </Button>
             </PanelStyled>

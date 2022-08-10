@@ -11,6 +11,8 @@ const AddRoomModals = () => {
     const handleOk = () => {
         addDocument('rooms', { ...form.getFieldsValue(), members: [uid] });
         setIsAddRoomVisible(false)
+
+        form.resetFields()
     }
 
     const handleCancel = () => {
