@@ -32,8 +32,8 @@ export default function RoomList() {
     const { rooms, setIsAddRoomVisible } = React.useContext(AppContext);
     
     const handleAddRoom = () => {
-        setIsAddRoomVisible(true)
-    }
+        setIsAddRoomVisible(true);
+    };
 
     return (
         <Collapse defaultActiveKey={['1']} ghost>
