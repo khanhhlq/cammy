@@ -23,7 +23,6 @@ const LoginPage = () => {
         }
     }
 
-
     return(
         <div className="login">
             <div className="login-header">
