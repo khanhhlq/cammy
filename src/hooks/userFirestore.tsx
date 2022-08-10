@@ -31,7 +31,7 @@ const userFirestore = (collection:any, condition:any) => {
         return unsubcribe;
     }, [collection, condition])
 
-    return document;
+    return documents;
 };
 
 export default userFirestore
