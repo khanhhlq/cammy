@@ -1,9 +1,9 @@
-import { Content } from 'antd/lib/layout/layout'
 import { Avatar, Button, Form, Tooltip, Input } from 'antd'
 import { UserAddOutlined } from '@ant-design/icons'
 import styled from '@emotion/styled';
-import React from 'react'
+import React, { useContext } from 'react'
 import Message from '../Message/Message';
+import { AppContext } from '../../Context/AppProvider';
 
 const HeaderStyled = styled.div`
     display: flex;
@@ -66,52 +66,56 @@ const MessageListStyled = styled.div`
     overflow-y: auto;
 `
 const ChatWindow = () => {
-  return (
-    <WrapperStyled>
-        <HeaderStyled>
-            <div className="header__info">
-                <p className="header__title">Room 1</p>
-                <span className="header__description">Day la room 1</span>
-            </div>
-            <ButtonGroupStyled>
-                <Button icon={<UserAddOutlined />} type='text'>Mời</Button>
-                <Avatar.Group size='small' maxCount={2}>
-                    <Tooltip title="A">
-                        <Avatar>A</Avatar>
-                    </Tooltip>
-                    <Tooltip title="B">
-                        <Avatar>A</Avatar>
-                    </Tooltip>
-                    <Tooltip title="C">
-                        <Avatar>A</Avatar>
-                    </Tooltip>
-                    <Tooltip title="D">
-                        <Avatar>A</Avatar>
-                    </Tooltip>
-                    <Tooltip title="E">
-                        <Avatar>A</Avatar>
-                    </Tooltip>
-                </Avatar.Group>
-            </ButtonGroupStyled>
-        </HeaderStyled>
+    const { selectedRoom } = useContext(AppContext)
 
-        <ContentStyled>
-            <MessageListStyled>
-                <Message text="text" displayName="Khanh" createdAt="123123123" photoURL="" />
-            </MessageListStyled>
-            <FormStyled>
-                <Form.Item>
-                    <Input 
-                        placeholder='Nhập tin nhắn ...'
-                        bordered={false} 
-                        autoComplete="off">    
-                    </Input>
-                </Form.Item>
-                <Button type='primary'>Gửi</Button>
-            </FormStyled>
-        </ContentStyled>
-    </WrapperStyled>
-  )
+    return (
+        <WrapperStyled>
+            <HeaderStyled>
+                <div className="header__info">
+                    <p className="header__title">{selectedRoom.name}</p>
+                    <span className="header__description">
+                        {selectedRoom.description}
+                    </span>
+                </div>
+                <ButtonGroupStyled>
+                    <Button icon={<UserAddOutlined />} type='text'>Mời</Button>
+                    <Avatar.Group size='small' maxCount={2}>
+                        <Tooltip title="A">
+                            <Avatar>A</Avatar>
+                        </Tooltip>
+                        <Tooltip title="B">
+                            <Avatar>A</Avatar>
+                        </Tooltip>
+                        <Tooltip title="C">
+                            <Avatar>A</Avatar>
+                        </Tooltip>
+                        <Tooltip title="D">
+                            <Avatar>A</Avatar>
+                        </Tooltip>
+                        <Tooltip title="E">
+                            <Avatar>A</Avatar>
+                        </Tooltip>
+                    </Avatar.Group>
+                </ButtonGroupStyled>
+            </HeaderStyled>
+
+            <ContentStyled>
+                <MessageListStyled>
+                    <Message text="text" displayName="Khanh" createdAt="123123123" photoURL="" />
+                </MessageListStyled>
+                <FormStyled>
+                    <Form.Item>
+                        <Input 
+                            placeholder='Nhập tin nhắn ...'
+                            bordered={false} 
+                            autoComplete="off">    
+                        </Input>
+                    </Form.Item>
+                    <Button type='primary'>Gửi</Button>
+                </FormStyled>
+            </ContentStyled>
+        </WrapperStyled>
+    )
 }
 
 export default ChatWindow
