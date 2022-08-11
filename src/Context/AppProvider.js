@@ -11,17 +11,16 @@ export default function AppProvider({ children }) {
         user: { uid },
     } = React.useContext(AuthContext);
     
-      const roomsCondition = React.useMemo(() => {
+    const roomsCondition = React.useMemo(() => {
         return {
-          fieldName: 'members',
-          operator: 'array-contains',
-          compareValue: uid,
+            fieldName: 'members',
+            operator: 'array-contains',
+            compareValue: uid,
         };
     }, [uid]);
     
     const rooms = useFirestore('rooms', roomsCondition);
     
-
     return (
         <AppContext.Provider value={{ rooms, isAddRoomVisible, setIsAddRoomVisible }}>
             {children}
