@@ -72,9 +72,9 @@ const ChatWindow = () => {
         <WrapperStyled>
             <HeaderStyled>
                 <div className="header__info">
-                    <p className="header__title">{selectedRoom.name}</p>
+                    <p className="header__title">ádf</p>
                     <span className="header__description">
-                        {selectedRoom.description}
+                        ádf
                     </span>
                 </div>
                 <ButtonGroupStyled>

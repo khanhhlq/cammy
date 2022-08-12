@@ -23,20 +23,20 @@ export default function AppProvider({ children }) {
     const rooms = useFirestore('rooms', roomsCondition);
 
     const selectedRoom = React.useMemo(
-        () => rooms.find((room) => room.id === selectedRoomId),
+        () => rooms.find((room) => room.id === selectedRoomId) || {},
         [rooms, selectedRoomId]
     )
     
     const usersCondition = React.useMemo(() => {
         return {
             fieldName: 'uid',
-            operator: 'array-contains',
+            operator: 'in',
             compareValue: selectedRoom.members,
         };
-    }, [uid]);
+    }, [selectedRoom.members]);
 
     const members = useFirestore('users', usersCondition)
-
+    console.log(members)
 
     
     

@@ -1,7 +1,7 @@
 import './LoginPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons' 
-import firebase, { auth, db } from "../../firebase/config";
+import firebase, { auth } from "../../firebase/config";
 import { addDocument } from '../../firebase/service';
 
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
                 displayName: user?.displayName,
                 email: user?.email,
                 photoURL: user?.photoURL,
-                uid: user?.displayName,
+                uid: user?.uid,
                 providerId: additionalUserInfo.providerId
             })
         }
