@@ -6,7 +6,14 @@ const useFirestore = (collectionn, condition) => {
   const [documents, setDocuments] = useState([]);
 
   React.useEffect(() => {
-    let collectionRef = query(collection(db, collectionn), where(condition.fieldName, condition.operator, condition.compareValue ))
+    if(condition){
+      if(!condition.compareValue || !condition.compareValue.length){
+        setDocuments([])
+        return;
+      }
+    }
+    
+    let collectionRef = query(collection(db, collectionn), where(condition.fieldName, condition.operator, condition.compareValue))
 
     const unsubscribe = onSnapshot(collectionRef, (querySnapshot) => {
       const documents = []
