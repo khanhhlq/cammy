@@ -95,7 +95,6 @@ export default function ChatWindow() {
 
     form.resetFields(['message']);
 
-    // focus to input again after submit
     if (inputRef?.current) {
       setTimeout(() => {
         inputRef.current.focus();
@@ -115,7 +114,6 @@ export default function ChatWindow() {
   const messages = useFirestore('messages', condition);
 
   useEffect(() => {
-    // scroll to bottom after message changed
     if (messageListRef?.current) {
       messageListRef.current.scrollTop =
         messageListRef.current.scrollHeight + 50;
