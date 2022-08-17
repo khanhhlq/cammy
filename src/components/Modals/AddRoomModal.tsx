@@ -4,7 +4,7 @@ import { addDocument } from '../../firebase/service'
 import { AuthContext } from '../../Context/AuthProvider'
 import { AppContext } from '../../Context/AppProvider'
 
-const AddRoomModals = () => {
+const AddRoomModal = () => {
     const { isAddRoomVisible, setIsAddRoomVisible } = useContext(AppContext)
     const { user:  { uid } } = useContext(AuthContext)
     const [form] = Form.useForm()
@@ -15,6 +15,7 @@ const AddRoomModals = () => {
     }
 
     const handleCancel = () => {
+        form.resetFields()
         setIsAddRoomVisible(false)
     }
 
@@ -39,4 +40,4 @@ const AddRoomModals = () => {
     )
 }
 
-export default AddRoomModals
+export default AddRoomModal

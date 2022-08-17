@@ -6,7 +6,8 @@ import LoginPage from './pages/Login/LoginPage';
 import ChatRoom from './pages/ChatRoom/ChatRoom';
 import AuthProvider from './Context/AuthProvider';
 import AppProvider from './Context/AppProvider';
-import AddRoomModals from './components/Modals/AddRoomModals';
+import AddRoomModal from './components/Modals/AddRoomModal';
+import InviteMemberModal from './components/Modals/InviteMember';
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
               <Route path='login' element={<LoginPage />} />
               <Route path='chat' element={<ChatRoom />} />
             </Routes>
-            <AddRoomModals />
+            <AddRoomModal />
+            <InviteMemberModal />
           </AppProvider>
         </AuthProvider>
       </BrowserRouter>
