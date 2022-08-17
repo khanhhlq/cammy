@@ -27,6 +27,7 @@ export default function AppProvider({ children }) {
         [rooms, selectedRoomId]
     )
     
+    console.log({selectedRoom})
     const usersCondition = React.useMemo(() => {
         return {
             fieldName: 'uid',
@@ -37,11 +38,11 @@ export default function AppProvider({ children }) {
 
     const members = useFirestore('users', usersCondition)
     console.log(members)
-    
     return (
         <AppContext.Provider 
             value={{ 
-                rooms, 
+                rooms,
+                members, 
                 selectedRoom,
                 isAddRoomVisible, 
                 setIsAddRoomVisible,

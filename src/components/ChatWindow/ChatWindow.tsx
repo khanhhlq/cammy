@@ -66,35 +66,27 @@ const MessageListStyled = styled.div`
     overflow-y: auto;
 `
 const ChatWindow = () => {
-    const { selectedRoom } = useContext(AppContext)
+    const { selectedRoom, members } = useContext(AppContext)
 
     return (
         <WrapperStyled>
             <HeaderStyled>
                 <div className="header__info">
-                    <p className="header__title">ádf</p>
-                    <span className="header__description">
-                        ádf
-                    </span>
+                    <p className="header__title">{selectedRoom.name}</p>
+                    <span className="header__description">{selectedRoom.description}</span>
                 </div>
                 <ButtonGroupStyled>
                     <Button icon={<UserAddOutlined />} type='text'>Mời</Button>
                     <Avatar.Group size='small' maxCount={2}>
-                        <Tooltip title="A">
-                            <Avatar>A</Avatar>
-                        </Tooltip>
-                        <Tooltip title="B">
-                            <Avatar>A</Avatar>
-                        </Tooltip>
-                        <Tooltip title="C">
-                            <Avatar>A</Avatar>
-                        </Tooltip>
-                        <Tooltip title="D">
-                            <Avatar>A</Avatar>
-                        </Tooltip>
-                        <Tooltip title="E">
-                            <Avatar>A</Avatar>
-                        </Tooltip>
+                        {
+                            members.map((member:any) => 
+                            <Tooltip title={member.displayName} key={member.id}>
+                                <Avatar src={member.photoURL}>
+                                    {member.photoURL ? '' : member.displayName?.charAt(0)?.toUpperCase()}
+                                </Avatar>
+                            </Tooltip>
+                            )
+                        }
                     </Avatar.Group>
                 </ButtonGroupStyled>
             </HeaderStyled>
